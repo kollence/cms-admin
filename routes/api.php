@@ -15,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
+
     return $request->user();
 });
+// need to be passed array and php artisan route:list show AJAX URLs and methods for that controller
+Route::apiResources(['user' => 'API\UserController']);
